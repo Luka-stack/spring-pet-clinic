@@ -4,7 +4,7 @@
 
     <groupId>com.nisshoku</groupId>
     <artifactId>spring-pet-clinic</artifactId>
-    <version>0.0.10-SNAPSHOT</version>
+    <version>0.0.11-SNAPSHOT</version>
     <modules>
         <module>pet-clinic-data</module>
         <module>pet-clinic-web</module>
