@@ -1,4 +1,4 @@
-package com.nisshoku.springpetclinic;
+package com.nisshoku.springpetsclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
