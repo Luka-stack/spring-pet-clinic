@@ -1,11 +1,11 @@
 package com.nisshoku.springpetsclinic.services.map;
 
 import com.nisshoku.springpetsclinic.model.Vet;
-import com.nisshoku.springpetsclinic.services.CrudService;
+import com.nisshoku.springpetsclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
