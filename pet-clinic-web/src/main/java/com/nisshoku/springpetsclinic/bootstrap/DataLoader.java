@@ -1,11 +1,7 @@
 package com.nisshoku.springpetsclinic.bootstrap;
 
 import com.nisshoku.springpetsclinic.model.*;
-import com.nisshoku.springpetsclinic.services.OwnerService;
-import com.nisshoku.springpetsclinic.services.PetTypeService;
-import com.nisshoku.springpetsclinic.services.SpecialityService;
-import com.nisshoku.springpetsclinic.services.VetService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.nisshoku.springpetsclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -18,14 +14,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    @Autowired
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-                      SpecialityService specialityService) {
+                      SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -91,6 +88,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(momosPet);
 
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(momosPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
 
         System.out.println("Loaded Owners...");
 
