@@ -1,4 +1,4 @@
-package com.nisshoku.springpetsclinic.repositories.springdatajpa;
+package com.nisshoku.springpetsclinic.services.springdatajpa;
 
 import com.nisshoku.springpetsclinic.model.Owner;
 import com.nisshoku.springpetsclinic.repositories.OwnerRepository;
