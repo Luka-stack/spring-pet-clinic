@@ -66,6 +66,7 @@ public class VisitController {
         }
         else {
             visitService.save(visit);
+
             return "redirect:/owners/{ownerId}";
         }
     }
